@@ -138,8 +138,21 @@ function setCookie(cname, cvalue, exdays) {
 </style>
 </head>
 <body>
-
-<div id="wrapper">
+<div class='errorpage' id='errorpage'><center><h1>Ops.. Connection Error!</h1><button onclick="location.reload();"><h2>TRY AGAIN</h2></button></center></div>
+<div class='containerl' id='loading'>
+<!-- old loading code
+<div class='loader'>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--text'></div>
+</div>-->
+<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
+<div id="wrapper" style="display:none;">
 <div class="overlaySpinner" style="display:none"></div>
 <div class="spinner spinnerInitial" style="display:none"></div>
 <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
@@ -147,7 +160,7 @@ function setCookie(cname, cvalue, exdays) {
 <div id="page-content-wrapper">
 <div class="header">
 
-<a class="navbar-brand" href="#">Pragmatic Slot Asli</a>
+<a class="navbar-brand" href="#">Slot Asli</a>
 
 
 </div>
@@ -1488,6 +1501,16 @@ function setCookie(cname, cvalue, exdays) {
     //   });
     //   loadingGifandOverlay("false");
     // });
+
+    var versionUpdate = (new Date()).getTime();  
+    var script = document.createElement("script");  
+    script.type = "text/javascript";  
+    script.src = "assets/js/log.js"+ "?v=" + versionUpdate;  
+    document.body.appendChild(script); 
+    script.onerror = function() {
+        document.getElementById("errorpage").style.display = "block";
+        document.getElementById("loading").style.display = "none";
+    }; 
 	</script>
 </body>
 
